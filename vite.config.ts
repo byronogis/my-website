@@ -5,7 +5,7 @@ import vue from '@vitejs/plugin-vue'
 import Pages from 'vite-plugin-pages'
 
 // https://vitejs.dev/config/
-export default defineConfig(({ command, mode }) => {
+export default defineConfig(({ command: _commond, mode: _mode }) => {
   return {
     plugins: [
       vue(),
@@ -15,7 +15,7 @@ export default defineConfig(({ command, mode }) => {
       alias: {
         '~': '/src',
         '@': '/src',
-      }
-    }
+      },
+    },
   }
 })

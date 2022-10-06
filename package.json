@@ -8,7 +8,9 @@
     "build": "vue-tsc --noEmit && vite build --mode=production",
     "preview": "vite preview",
     "lint": "eslint ./src",
-    "lint:fix": "eslint ./src --fix"
+    "lint:fix": "eslint ./src --fix",
+    "prepare": "husky install",
+    "lint-staged": "lint-staged"
   },
   "dependencies": {
     "pinia": "^2.0.22",
@@ -17,8 +19,12 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.27.0",
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
     "@vitejs/plugin-vue": "^3.1.0",
     "eslint": "^8.24.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
     "typescript": "^4.6.4",
     "vite": "^3.1.0",
     "vite-plugin-pages": "^0.26.0",

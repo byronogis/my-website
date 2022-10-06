@@ -1,12 +1,11 @@
 import { createApp } from 'vue'
+import type { Plugin } from 'vue'
 import App from './App.vue'
-import pinia from '~/store'
-import router from '~/router'
 import './style.css'
 
 const app = createApp(App)
 
-app
-  .use(pinia)
-  .use(router)
-  .mount('#app')
+const modules = import.meta.glob('./modules/*.ts', { import: 'default', eager: true }) as Record<string, Plugin>
+Object.values(modules).forEach(module => app.use(module))
+
+app.mount('#app')

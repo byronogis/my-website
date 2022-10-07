@@ -25,6 +25,7 @@ export default defineConfig(({ command: _commond, mode: _mode }) => {
         resolvers: [
           NaiveUiResolver(),
         ],
+        dts: './src/components.d.ts',
       }),
       AutoImport({
         imports: [

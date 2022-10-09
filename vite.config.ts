@@ -11,6 +11,9 @@ import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
 // Auto import APIs
 // See https://github.com/antfu/unplugin-auto-import#readme
 import AutoImport from 'unplugin-auto-import/vite'
+// atomic CSS engine
+// See https://github.com/unocss/unocss/tree/main/packages/vite
+import Unocss from 'unocss/vite'
 
 // https://vitejs.dev/config/
 export default defineConfig(({ command: _commond, mode: _mode }) => {
@@ -37,6 +40,7 @@ export default defineConfig(({ command: _commond, mode: _mode }) => {
           './src/store',
         ],
       }),
+      Unocss(),
     ],
     resolve: {
       alias: {

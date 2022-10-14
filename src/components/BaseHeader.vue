@@ -16,7 +16,7 @@ const router = useRouter()
     flex flex-row justify-between items-center
     px-4 h-15
     border-b-1 border-b-gray
-    bg-white
+    liam-bg
   >
     <div
       class="bh-left"

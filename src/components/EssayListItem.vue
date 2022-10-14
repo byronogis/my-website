@@ -20,7 +20,7 @@ const openDetail = ({ _name }: EssayFrontmatter) => {
     p-2
   >
     <h2
-      class="essay-item-title color-#528587"
+      class="essay-item-title"
       font-700
       my-2
       @click="openDetail(props.data)"
@@ -28,7 +28,7 @@ const openDetail = ({ _name }: EssayFrontmatter) => {
       {{ props.data.title }}
     </h2>
     <div
-      class="essay-item-desc color-black"
+      class="essay-item-desc"
       font-400
       my-2
     >

@@ -15,6 +15,7 @@ const navs: { text: string; path: string; outer?: boolean }[] = [
   <div
     class="container"
     m-auto pt-15
+    h-100vh min-h-100vh
   >
     <BaseHeader
       :title="siteName"

@@ -5,12 +5,14 @@ specifiers:
   '@commitlint/cli': ^17.1.2
   '@commitlint/config-conventional': ^17.1.0
   '@iconify-json/carbon': ^1.1.8
+  '@types/nprogress': ^0.2.0
   '@vitejs/plugin-vue': ^3.1.2
   eslint: ^8.25.0
   highlight.js: ^11.6.0
   husky: ^8.0.1
   lint-staged: ^13.0.3
   naive-ui: ^2.33.5
+  nprogress: ^0.2.0
   pinia: ^2.0.23
   postcss-nested: ^6.0.0
   typescript: ^4.8.4
@@ -27,6 +29,7 @@ specifiers:
 
 dependencies:
   highlight.js: 11.6.0
+  nprogress: 0.2.0
   pinia: 2.0.23_bfjwoga25wxjazzogo7o372nwq
   vue: 3.2.40
   vue-router: 4.1.5_vue@3.2.40
@@ -36,6 +39,7 @@ devDependencies:
   '@commitlint/cli': 17.1.2
   '@commitlint/config-conventional': 17.1.0
   '@iconify-json/carbon': 1.1.8
+  '@types/nprogress': 0.2.0
   '@vitejs/plugin-vue': 3.1.2_vite@3.1.7+vue@3.2.40
   eslint: 8.25.0
   husky: 8.0.1
@@ -635,6 +639,10 @@ packages:
 
   /@types/normalize-package-data/2.4.1:
     resolution: {integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==}
+    dev: true
+
+  /@types/nprogress/0.2.0:
+    resolution: {integrity: sha512-1cYJrqq9GezNFPsWTZpFut/d4CjpZqA0vhqDUPFWYKF1oIyBz5qnoYMzR+0C/T96t3ebLAC1SSnwrVOm5/j74A==}
     dev: true
 
   /@types/parse-json/4.0.0:
@@ -3741,6 +3749,10 @@ packages:
     dependencies:
       path-key: 4.0.0
     dev: true
+
+  /nprogress/0.2.0:
+    resolution: {integrity: sha512-I19aIingLgR1fmhftnbWWO3dXc0hSxqHQHQb3H8m+K3TnEn/iSeTZZOyvKXWqQESMwuUVnatlCnZdLBZZt2VSA==}
+    dev: false
 
   /nth-check/2.1.1:
     resolution: {integrity: sha512-lqjrjmaOoAnWfMmBPL+XNnynZh2+swxiX3WUE0s4yEHI6m+AwrK2UZOimIRl3X/4QctVqS8AiZjFqyOGrMXb/w==}

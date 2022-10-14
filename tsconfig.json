@@ -21,7 +21,8 @@
       "vite/client",
       "vite-plugin-pages/client",
       "vite-plugin-vue-layouts/client",
-      "naive-ui/volar"
+      "naive-ui/volar",
+      "nprogress"
     ]
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],

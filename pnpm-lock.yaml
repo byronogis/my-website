@@ -4,6 +4,7 @@ specifiers:
   '@antfu/eslint-config': ^0.27.0
   '@commitlint/cli': ^17.1.2
   '@commitlint/config-conventional': ^17.1.0
+  '@iconify-json/carbon': ^1.1.8
   '@vitejs/plugin-vue': ^3.1.2
   eslint: ^8.25.0
   highlight.js: ^11.6.0
@@ -34,6 +35,7 @@ devDependencies:
   '@antfu/eslint-config': 0.27.0_z4bbprzjrhnsfa24uvmcbu7f5q
   '@commitlint/cli': 17.1.2
   '@commitlint/config-conventional': 17.1.0
+  '@iconify-json/carbon': 1.1.8
   '@vitejs/plugin-vue': 3.1.2_vite@3.1.7+vue@3.2.40
   eslint: 8.25.0
   husky: 8.0.1
@@ -437,6 +439,12 @@ packages:
 
   /@humanwhocodes/object-schema/1.2.1:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
+    dev: true
+
+  /@iconify-json/carbon/1.1.8:
+    resolution: {integrity: sha512-aSoMgvZyvIXadLbMXcfS+qy8CVxSExvvp8Vd/nCrupLFc0KLKSukRInnVNc63zaHqoe1NBf5xUrgfyRYYfaKWQ==}
+    dependencies:
+      '@iconify/types': 2.0.0
     dev: true
 
   /@iconify/types/2.0.0:

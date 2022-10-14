@@ -4,6 +4,9 @@ import vue from '@vitejs/plugin-vue'
 // File system based route
 // See https://github.com/hannoeru/vite-plugin-pages
 import Pages from 'vite-plugin-pages'
+// Vue layout plugin for Vite
+// See https://github.com/JohnCampionJr/vite-plugin-vue-layouts
+import Layouts from 'vite-plugin-vue-layouts'
 import Markdown from 'vite-plugin-md'
 // On-demand components auto importing for Vue
 // See https://github.com/antfu/unplugin-vue-components
@@ -27,6 +30,7 @@ export default defineConfig(({ command: _commond, mode: _mode }) => {
         include: [/\.vue$/, /\.md$/],
       }),
       Pages(),
+      Layouts(),
       Markdown(),
       Components({
         resolvers: [

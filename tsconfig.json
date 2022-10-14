@@ -20,6 +20,7 @@
     "types": [
       "vite/client",
       "vite-plugin-pages/client",
+      "vite-plugin-vue-layouts/client",
       "naive-ui/volar"
     ]
   },

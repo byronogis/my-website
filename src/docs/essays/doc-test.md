@@ -8,3 +8,8 @@ component: doc-test
 ---
 
 ## 这是一篇测试文档
+
+```js
+const foo = 'summer'
+console.log(foo)
+```

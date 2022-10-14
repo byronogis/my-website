@@ -3,6 +3,7 @@
 const siteName = import.meta.env.VITE_SITE_NAME
 // 网站顶部导航
 const navs: { text: string; path: string; outer?: boolean }[] = [
+  { text: '首页', path: '/' },
   { text: '随笔', path: '/essays' },
   { text: '项目', path: '/project' },
   { text: 'Github', path: 'https://www.github.com/liamrad', outer: true },
@@ -12,8 +13,8 @@ const navs: { text: string; path: string; outer?: boolean }[] = [
 
 <template>
   <div
-    class="app-container"
-    pt-15
+    class="container"
+    m-auto pt-15
   >
     <BaseHeader
       :title="siteName"

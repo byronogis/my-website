@@ -7,4 +7,7 @@
   <RouterLink to="/essays">
     essays
   </RouterLink>
+  <div
+    h-500
+  />
 </template>

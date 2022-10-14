@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import type { Plugin } from 'vue'
 import App from './App.vue'
 import './styles/index.css'
+import './styles/md.postcss'
 import 'uno.css'
 
 const app = createApp(App)

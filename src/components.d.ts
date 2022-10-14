@@ -7,11 +7,11 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    BaseDivider: typeof import('./components/BaseDivider.vue')['default']
+    BaseHeader: typeof import('./components/BaseHeader.vue')['default']
+    BaseTag: typeof import('./components/BaseTag.vue')['default']
     EssayList: typeof import('./components/EssayList.vue')['default']
     EssayListItem: typeof import('./components/EssayListItem.vue')['default']
-    NDivider: typeof import('naive-ui')['NDivider']
-    NSpace: typeof import('naive-ui')['NSpace']
-    NTag: typeof import('naive-ui')['NTag']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

@@ -11,7 +11,6 @@ import Markdown from 'vite-plugin-md'
 // On-demand components auto importing for Vue
 // See https://github.com/antfu/unplugin-vue-components
 import Components from 'unplugin-vue-components/vite'
-import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
 // Auto import APIs
 // See https://github.com/antfu/unplugin-auto-import#readme
 import AutoImport from 'unplugin-auto-import/vite'
@@ -34,7 +33,6 @@ export default defineConfig(({ command: _commond, mode: _mode }) => {
       Markdown(),
       Components({
         resolvers: [
-          NaiveUiResolver(),
         ],
         dts: './src/components.d.ts',
       }),

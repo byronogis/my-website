@@ -39,14 +39,7 @@ const openDetail = ({ _name }: EssayFrontmatter) => {
       flex flex-row justify-between
     >
       <div class="essay-item-tags">
-        <n-space>
-          <n-tag
-            v-for="tag in props.data.tags"
-            :key="tag"
-          >
-            {{ tag }}
-          </n-tag>
-        </n-space>
+        <BaseTag :data="props.data.tags" />
       </div>
       <div class="essay-item-date">
         {{ props.data.date }}

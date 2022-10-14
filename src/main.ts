@@ -3,6 +3,7 @@ import type { Plugin } from 'vue'
 import App from './App.vue'
 import './styles/index.postcss'
 import 'uno.css'
+import 'animate.css'
 
 const app = createApp(App)
 

@@ -7,6 +7,7 @@ specifiers:
   '@iconify-json/carbon': ^1.1.8
   '@types/nprogress': ^0.2.0
   '@vitejs/plugin-vue': ^3.1.2
+  animate.css: ^4.1.1
   eslint: ^8.25.0
   highlight.js: ^11.6.0
   husky: ^8.0.1
@@ -27,6 +28,7 @@ specifiers:
   vue-tsc: ^1.0.7
 
 dependencies:
+  animate.css: 4.1.1
   highlight.js: 11.6.0
   nprogress: 0.2.0
   pinia: 2.0.23_bfjwoga25wxjazzogo7o372nwq
@@ -1124,6 +1126,10 @@ packages:
       require-from-string: 2.0.2
       uri-js: 4.4.1
     dev: true
+
+  /animate.css/4.1.1:
+    resolution: {integrity: sha512-+mRmCTv6SbCmtYJCN4faJMNFVNN5EuCTTprDTAo7YzIGji2KADmakjVA3+8mVDkZ2Bf09vayB35lSQIex2+QaQ==}
+    dev: false
 
   /ansi-escapes/4.3.2:
     resolution: {integrity: sha512-gKXj5ALrKWQLsYG9jlTRmR/xKluxHV+Z9QEwNIgCfM1/uwPMCuzVVnh5mwTd+OuBZcwSIMbqssNWRm1lE51QaQ==}

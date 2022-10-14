@@ -13,6 +13,7 @@
     "lint-staged": "lint-staged"
   },
   "dependencies": {
+    "animate.css": "^4.1.1",
     "highlight.js": "^11.6.0",
     "nprogress": "^0.2.0",
     "pinia": "^2.0.23",

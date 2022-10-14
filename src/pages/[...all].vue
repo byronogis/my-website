@@ -1,13 +1,23 @@
+<script setup lang="ts">
+const router = useRouter()
+const el = ref<HTMLDivElement>()
+const stopAnimate = () => { el.value?.classList.remove('animate__shakeY') }
+const resumeAnimate = () => { el.value?.classList.add('animate__shakeY') }
+</script>
+
 <template>
-  <n-result status="404" title="404 资源不存在">
-    <template #footer>
-      <n-button>
-        <RouterLink to="/">
-          返回首页
-        </RouterLink>
-      </n-button>
-    </template>
-  </n-result>
+  <div>
+    <div
+      ref="el"
+      class="animate__animated animate__shakeY animate__slow animate__infinite"
+      i-carbon-face-dizzy
+      h-40 w-40 cursor-pointer
+      title="返回首页"
+      @click="router.push('/')"
+      @mouseenter="stopAnimate"
+      @mouseout="resumeAnimate"
+    />
+  </div>
 </template>
 
 <route lang="yaml">

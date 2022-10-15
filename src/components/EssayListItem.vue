@@ -7,7 +7,10 @@ const props = defineProps<{
 const router = useRouter()
 const openDetail = ({ _name }: EssayFrontmatter) => {
   router.push({
-    path: `essays/${_name}`,
+    path: 'essays/detail',
+    query: {
+      title: _name,
+    },
   })
 }
 </script>

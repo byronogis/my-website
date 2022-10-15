@@ -1,13 +1,11 @@
 <script setup lang="ts">
-// import hljs from 'highlight.js'
+const route = useRoute()
 
-const props = defineProps<{
-  title: string
-}>()
+const title = route.query.title
 
 const name = shallowRef()
 
-const md = () => import(`../../docs/essays/${props.title}.md`)
+const md = () => import(`../../docs/essays/${title}.md`)
 md().then((res) => {
   name.value = res.default
 })

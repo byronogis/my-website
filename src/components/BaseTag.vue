@@ -6,7 +6,7 @@ const props = defineProps<{
 const router = useRouter()
 const openEssaysOfTag = (tag: string) => {
   router.push({
-    path: 'essays',
+    path: '/essays',
     query: {
       tag,
     },

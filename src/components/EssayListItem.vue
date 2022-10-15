@@ -31,11 +31,11 @@ const openDetail = ({ _name }: EssayFrontmatter) => {
       {{ props.data.title }}
     </h2>
     <div
-      class="essay-item-desc"
+      class="essay-item-description"
       font-400
       my-2
     >
-      {{ props.data.desc }}
+      {{ props.data.description }}
     </div>
     <div
       class="essay-item-more"

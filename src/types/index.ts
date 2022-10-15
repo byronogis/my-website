@@ -1,6 +1,6 @@
 export interface EssayFrontmatter {
   title: string
-  desc: string
+  description: string
   tags: string[]
   date: string
   _path?: string

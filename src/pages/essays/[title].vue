@@ -22,4 +22,6 @@ md().then((res) => {
 
 <route lang="yaml">
 name: essays-title
-  </route>
+meta:
+  layout: essays
+</route>

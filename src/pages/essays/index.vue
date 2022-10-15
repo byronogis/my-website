@@ -6,7 +6,6 @@ const essayStore = useEssayStore()
 
 const essays = essayStore.essays
 const essaysFilter = ref()
-const tags = essayStore.tags
 
 watch(() => route.query.tag, (tag) => {
   essaysFilter.value = essayStore.essaysFilterWithTag(tag as string)
@@ -14,12 +13,10 @@ watch(() => route.query.tag, (tag) => {
 </script>
 
 <template>
-  <div
-    class="page-essays-index"
-    h-full w-full
-    flex flex-row justify-evenly items-start
-  >
-    <EssayTag :data="tags" />
-    <EssayList :data-list="!isTagParamsHere ? Object.values(essays) : essaysFilter" />
-  </div>
+  <EssayList :data-list="!isTagParamsHere ? Object.values(essays) : essaysFilter" />
 </template>
+
+<route lang="yaml">
+meta:
+  layout: essays
+</route>

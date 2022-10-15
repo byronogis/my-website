@@ -12,7 +12,7 @@ const router = useRouter()
 <template>
   <div
     class="base-header container"
-    fixed top-0 left-0 right-0
+    fixed top-0 left-0 right-0 z-9
     flex flex-row justify-between items-center
     m-auto px-4 h-15
     border-b-1 border-b-gray

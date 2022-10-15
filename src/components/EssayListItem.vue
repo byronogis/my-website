@@ -27,27 +27,35 @@ const openDetail = ({ _name }: EssayFrontmatter) => {
       font-700
       my-2
       cursor-pointer
+      hover:underline
       @click="openDetail(props.data)"
     >
       {{ props.data.title }}
     </h2>
     <div
       class="essay-item-description"
-      font-400
-      my-2
+      mt-4
+      opacity-80
     >
       {{ props.data.description }}
     </div>
     <div
       class="essay-item-more"
       flex flex-row justify-between
+      mt-8
     >
       <div class="essay-item-tags">
         <BaseTag :data="props.data.tags" />
       </div>
-      <div class="essay-item-date">
+      <div class="essay-item-date" opacity-80>
         {{ props.data.date }}
       </div>
     </div>
   </div>
 </template>
+
+<style lang="postcss">
+.essay-item-title {
+  color: var(--liam-primary)
+}
+</style>

@@ -15,6 +15,7 @@ const router = useRouter()
       <dd
         v-for="(count, title) in props.data" :key="title"
         cursor-pointer py-1
+        hover:underline
         @click="router.push(`/essays?tag=${title}`)"
       >
         {{ title }} {{ count }}

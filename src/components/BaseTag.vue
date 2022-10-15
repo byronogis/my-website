@@ -17,13 +17,28 @@ const openEssaysOfTag = (tag: string) => {
 <template>
   <div class="base-tag">
     <span
-      v-for="tag in props.data" :key="tag"
-      inline-block mx-2 px-2
-      bg-gray-100
-      cursor-pointer
+      v-for="tag in props.data"
+      :key="tag"
+      class="base-tag-item"
+      inline-block
+      mx-2 px-2 cursor-pointer
+      opacity-80
+      hover:underline
       @click="openEssaysOfTag(tag)"
     >
       {{ tag }}
     </span>
   </div>
 </template>
+
+<style lang="postcss">
+.base-tag {
+  font-size: 14px;
+  &::before {
+    content: '标签: '
+  }
+}
+.base-tag-item {
+  color: var(--liam-primary);
+}
+</style>

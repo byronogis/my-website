@@ -7,6 +7,7 @@
     "dev": "vite --mode=development",
     "build": "vue-tsc --noEmit && vite build --mode=production",
     "preview": "vite preview",
+    "typecheck": "vue-tsc --noEmit",
     "lint": "eslint ./src",
     "lint:fix": "eslint ./src --fix",
     "prepare": "husky install",

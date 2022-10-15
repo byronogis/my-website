@@ -1,13 +1,12 @@
 <script setup lang='ts'>
+
 </script>
 
 <template>
-  this is index
-  <br>
-  <RouterLink to="/essays">
-    essays
-  </RouterLink>
-  <div
-    h-500
-  />
+  <div class="page-index" h-full flex justify-center items-center>
+    Home
+  </div>
 </template>
+
+<style lang="postcss">
+</style>

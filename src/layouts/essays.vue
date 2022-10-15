@@ -19,7 +19,7 @@ const tags = essayStore.tags
       class="layouts-essays-main"
       h-full w-full p-4
     >
-      <EssayTag :data="tags" />
+      <div><EssayTag :data="tags" fixed /></div>
       <RouterView />
     </div>
   </div>

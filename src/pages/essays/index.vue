@@ -9,7 +9,7 @@ const essaysFilter = ref()
 
 watch(() => route.query.tag, (tag) => {
   essaysFilter.value = essayStore.essaysFilterWithTag(tag as string)
-})
+}, { immediate: true })
 </script>
 
 <template>

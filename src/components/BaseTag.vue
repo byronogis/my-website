@@ -21,7 +21,7 @@ const openEssaysOfTag = (tag: string) => {
       :key="tag"
       class="base-tag-item"
       inline-block
-      mx-2 px-2 cursor-pointer
+      px-1 cursor-pointer
       opacity-80
       hover:underline
       @click="openEssaysOfTag(tag)"

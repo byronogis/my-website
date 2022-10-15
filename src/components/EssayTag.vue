@@ -18,8 +18,21 @@ const router = useRouter()
         hover:underline
         @click="router.push(`/essays?tag=${title}`)"
       >
-        {{ title }} {{ count }}
+        {{ title }}
+        <em
+          class="essay-tag-count"
+          relative top--1 left--1
+          opacity-80
+          scale-80
+          inline-block
+        >{{ count }}</em>
       </dd>
     </dl>
   </div>
 </template>
+
+<style lang="postcss">
+.essay-tag-count {
+  color: var(--liam-primary)
+}
+</style>

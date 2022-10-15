@@ -1,14 +1,5 @@
 <script setup lang="ts">
-// 网站标题
-const siteName = import.meta.env.VITE_SITE_NAME
-// 网站顶部导航
-const navs: { text: string; path: string; outer?: boolean }[] = [
-  { text: '首页', path: '/' },
-  { text: '随笔', path: '/essays' },
-  { text: '项目', path: '/project' },
-  { text: 'Github', path: 'https://www.github.com/liamrad', outer: true },
-  { text: '关于', path: '/about' },
-]
+const siteStore = useSiteStore()
 </script>
 
 <template>
@@ -18,8 +9,8 @@ const navs: { text: string; path: string; outer?: boolean }[] = [
     h-100vh min-h-100vh
   >
     <BaseHeader
-      :title="siteName"
-      :navs="navs"
+      :title="siteStore.siteName"
+      :navs="siteStore.siteNav"
     />
     <RouterView />
   </div>

@@ -26,6 +26,7 @@ const openDetail = ({ _name }: EssayFrontmatter) => {
       class="essay-item-title"
       font-700
       my-2
+      cursor-pointer
       @click="openDetail(props.data)"
     >
       {{ props.data.title }}

@@ -20,6 +20,7 @@ const openEssaysOfTag = (tag: string) => {
       v-for="tag in props.data" :key="tag"
       inline-block mx-2 px-2
       bg-gray-100
+      cursor-pointer
       @click="openEssaysOfTag(tag)"
     >
       {{ tag }}

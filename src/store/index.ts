@@ -12,3 +12,4 @@ export const useStore = defineStore('main', () => {
   }
 })
 
+export { useEssayStore } from './essay'

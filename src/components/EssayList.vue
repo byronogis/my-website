@@ -9,7 +9,7 @@ const props = defineProps<{
 <template>
   <div class="essay-list">
     <template
-      v-for="item, index in props.dataList" :key="item.title"
+      v-for="item, index in props.dataList" :key="item._name"
     >
       <EssayListItem
         :data="item"

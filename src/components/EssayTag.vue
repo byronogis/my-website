@@ -4,6 +4,8 @@ const props = defineProps<{
 }>()
 
 const router = useRouter()
+const route = useRoute()
+const currentTag = computed(() => route.query.tag as string)
 </script>
 
 <template>
@@ -18,10 +20,13 @@ const router = useRouter()
         hover:underline
         @click="router.push(`/essays?tag=${title}`)"
       >
-        {{ title }}
+        <span
+          class="essay-tag-title"
+          :class="title === currentTag && 'active'"
+        >{{ title }}</span>
         <em
           class="essay-tag-count"
-          relative top--1 left--1
+          relative top--1 left--0
           opacity-80
           scale-80
           inline-block
@@ -34,5 +39,11 @@ const router = useRouter()
 <style lang="postcss">
 .essay-tag-count {
   color: var(--liam-primary)
+}
+.essay-tag-title {
+  &.active {
+    text-decoration: underline;
+    color: var(--liam-primary)
+  }
 }
 </style>

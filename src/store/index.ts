@@ -11,6 +11,3 @@ export const useStore = defineStore('main', () => {
     increment,
   }
 })
-
-export { useEssayStore } from './essay'
-export { useSiteStore } from './site'

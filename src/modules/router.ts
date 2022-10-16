@@ -11,12 +11,12 @@ const router = createRouter({
 
 router.beforeEach((to, from, next) => {
   //
-  nprogress.start()
+  utils.nprogress.start()
   next()
 })
 
 router.afterEach(() => {
-  nprogress.done()
+  utils.nprogress.done()
 })
 
 export default router

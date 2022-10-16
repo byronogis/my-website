@@ -45,7 +45,7 @@ export default defineConfig(({ command: _commond, mode: _mode }) => {
         dts: './src/auto-imports.d.ts',
         dirs: [
           './src/store',
-          './src/utils',
+          './src/utils/utils',
         ],
       }),
       Unocss(),

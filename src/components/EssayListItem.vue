@@ -20,7 +20,6 @@ const openDetail = ({ _name }: EssayFrontmatter) => {
     id="essay-item"
     class="w-full"
     text-left
-    p-2
   >
     <h2
       class="essay-item-title"

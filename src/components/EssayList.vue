@@ -13,6 +13,7 @@ const props = defineProps<{
     >
       <EssayListItem
         :data="item"
+        pb-2
       />
       <BaseDivider v-if="index !== props.dataList.length - 1" />
     </template>

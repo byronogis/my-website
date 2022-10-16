@@ -13,7 +13,7 @@ watch(() => route.query.tag, (tag) => {
 </script>
 
 <template>
-  <EssayList :data-list="!isTagParamsHere ? Object.values(essays) : essaysFilter" />
+  <EssayList :data-list="!isTagParamsHere ? essays : essaysFilter" />
 </template>
 
 <route lang="yaml">

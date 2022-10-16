@@ -19,7 +19,9 @@ const tags = essayStore.tags
       class="layouts-essays-main"
       h-full w-full p-4
     >
-      <div><EssayTag :data="tags" fixed /></div>
+      <div class="lem-tag">
+        <EssayTag :data="tags" fixed />
+      </div>
       <RouterView />
     </div>
   </div>
@@ -29,5 +31,14 @@ const tags = essayStore.tags
 .layouts-essays-main {
   display: grid;
   grid-template-columns: 2fr 6fr 2fr;
+}
+
+@media (max-width: 640px) {
+  .layouts-essays-main {
+    display: block;
+  }
+  .lem-tag {
+    display: none;
+  }
 }
 </style>

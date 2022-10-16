@@ -40,6 +40,7 @@ export default defineConfig(({ command: _commond, mode: _mode }) => {
         imports: [
           'vue',
           'vue-router',
+          '@vueuse/core',
         ],
         dts: './src/auto-imports.d.ts',
         dirs: [

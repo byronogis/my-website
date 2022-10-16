@@ -13,9 +13,12 @@ export const useEssayStore = defineStore('essay', () => {
     essaysRaw[val].tags = Array.isArray(essaysRaw[val].tags) ? essaysRaw[val].tags : ['无标签']
   })
 
-  const essays = Object.values(essaysRaw).sort((a, b) => +new Date(b.date) - +new Date(a.date))
+  const essays = Object.values(essaysRaw)
+    .sort(utils.mdSortByDate)
   //
-  const essaysFilterWithTag = (tag: string) => Object.values(essaysRaw).filter(val => val.tags.includes(tag))
+  const essaysFilterWithTag = (tag: string) => Object.values(essaysRaw)
+    .filter(val => val.tags.includes(tag))
+    .sort(utils.mdSortByDate)
 
   const tags = Object.values(essaysRaw).reduce((acc, val) => {
     val.tags.forEach((tag) => { acc[tag] = acc[tag] ? ++acc[tag] : 1 })

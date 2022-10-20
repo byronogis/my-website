@@ -12,7 +12,10 @@ md().then((res) => {
 </script>
 
 <template>
-  <div class="pages-essays-detail">
+  <div v-if="!component">
+    <BaseLoading />
+  </div>
+  <div v-else class="pages-essays-detail">
     <h1
       class="ped-title"
       pt-4 pb-8

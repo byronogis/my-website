@@ -9,6 +9,7 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     BaseDivider: typeof import('./components/BaseDivider.vue')['default']
     BaseHeader: typeof import('./components/BaseHeader.vue')['default']
+    BaseLoading: typeof import('./components/BaseLoading.vue')['default']
     BaseTag: typeof import('./components/BaseTag.vue')['default']
     EssayList: typeof import('./components/EssayList.vue')['default']
     EssayListItem: typeof import('./components/EssayListItem.vue')['default']

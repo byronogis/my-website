@@ -34,7 +34,14 @@ curl -fsSL https://fnm.vercel.app/install | bash -s -- --skip-shell
 
 ### windows
 
-> [scoop/choco/cargo](https://github.com/Schniz/fnm#manually)
+> [scoop/choco/cargo/binary](https://github.com/Schniz/fnm#manually)
+
+#### with binary
+
+1. 下载 [fnm-windows.zip](https://github.com/Schniz/fnm/releases)
+2. 解压出 exe 文件, 复制 exe 文件所在文件夹路径
+3. 编辑用户环境变量, 添加上面复制的路径
+4. 编辑用户文件夹下的 `.bashrc` 文件, 添加 `eval "$(fnm env --use-on-cd)"`
 
 #### with cargo
 
@@ -42,16 +49,18 @@ curl -fsSL https://fnm.vercel.app/install | bash -s -- --skip-shell
 2. `cargo install fnm`
 3. edit `.bashrc`
 
-  > [Git Bash issues](https://github.com/Schniz/fnm/issues/390#issuecomment-776240883)
+#### Git Bash issues
 
-  ```bash
-  eval $(fnm env | sed 1d)
-  export PATH=$(cygpath $FNM_MULTISHELL_PATH):$PATH
+> [Git Bash issues](https://github.com/Schniz/fnm/issues/390#issuecomment-776240883)
 
-  if [[ -f .node-version || -f .nvmrc ]]; then
-      fnm use
-  fi
-  ```
+```bash
+eval $(fnm env | sed 1d)
+export PATH=$(cygpath $FNM_MULTISHELL_PATH):$PATH
+
+if [[ -f .node-version || -f .nvmrc ]]; then
+    fnm use
+fi
+```
 
 ## 常用命令
 

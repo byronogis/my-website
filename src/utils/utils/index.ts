@@ -10,7 +10,12 @@ const mdSortByDate = (a: EssayFrontmatter, b: EssayFrontmatter) => {
   return +new Date(b.date) - +new Date(a.date)
 }
 
+const mdSortByUpDate = (a: EssayFrontmatter, b: EssayFrontmatter) => {
+  return +new Date(b.date) - +new Date(a.date)
+}
+
 export default {
   mdSortByDate,
+  mdSortByUpDate,
   nprogress,
 }

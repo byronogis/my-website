@@ -47,7 +47,8 @@ const openDetail = ({ _name }: EssayFrontmatter) => {
         <BaseTag :data="props.data.tags" />
       </div>
       <div class="essay-item-date" opacity-80>
-        {{ props.data.date }}
+        <span>更新于: </span>
+        {{ props.data.update }}
       </div>
     </div>
   </div>

@@ -2,7 +2,7 @@
 title: pnpm 注意磁盘文件系统的支持与否
 description: 注意使用的文件系统是否支持硬链接
 date: 2021-11-24 15:20
-lastmod: 2021-11-24 15:20
+update: 2021-11-24 15:20
 tags:
   - computer
 head:

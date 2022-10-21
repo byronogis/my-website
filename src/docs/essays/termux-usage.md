@@ -2,7 +2,7 @@
 title: Termux 使用
 description: 安卓手机上运行Linux系统  
 date: 2022-08-28 09:47
-lastmod: 2022-08-28 09:47
+update: 2022-08-28 09:47
 tags:
   - linux
   - android

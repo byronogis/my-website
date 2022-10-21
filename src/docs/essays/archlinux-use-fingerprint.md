@@ -2,7 +2,7 @@
 title: Arch 使用指纹
 description: 20XKA001CD ThinkPad T14 Gen 2a & KDE + SDDM  
 date: 2022-06-03 22:13
-lastmod: 2022-06-03 22:13
+update: 2022-06-03 22:13
 tags:
   - linux
 head:

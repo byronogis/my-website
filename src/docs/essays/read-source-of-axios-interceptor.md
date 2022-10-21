@@ -2,7 +2,7 @@
 title: axios拦截器源码解读
 description: 请求拦截器、响应拦截器
 date: 2021-12-10 01:03
-lastmod: 2021-12-10 01:03
+update: 2021-12-10 01:03
 tags:
   - js
 head:

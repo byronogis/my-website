@@ -2,7 +2,7 @@
 title: Arch 一些软件安装
 description: archlinux 使用中一些自用软件的安装记录
 date: 2022-06-03 12:12
-lastmod: 2022-06-13 10:40
+update: 2022-06-13 10:40
 tags:
   - linux
   - application

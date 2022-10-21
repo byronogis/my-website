@@ -2,7 +2,7 @@
 title: Archlinux 安装切换内核
 description: systemd-boot 下配置切换使用其它内核， kernel kernel-zen kernel-lts  
 date: 2022-08-24 22:16
-lastmod: 2022-08-24 22:16
+update: 2022-08-24 22:16
 tags:
   - linux
 head:

@@ -2,7 +2,7 @@
 title: http-server 快速启动一个本地服务
 description: 使用 http-server 包快速启动一个本地服务, 比如用来做局域网传输
 date: 	2022-08-01 22:52
-lastmod: 	2022-08-01 22:52
+update: 	2022-08-01 22:52
 tags:
   - js
   - node

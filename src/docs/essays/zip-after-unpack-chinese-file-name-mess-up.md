@@ -2,7 +2,7 @@
 title: linux-zip解压后中文乱码
 description: 由windows下生成的zip格式的压缩包，在linux下解压后中文乱码
 date: 2022-06-12 22:11
-lastmod: 2022-06-12 22:11
+update: 2022-06-12 22:11
 tags:
   - linux
 head:

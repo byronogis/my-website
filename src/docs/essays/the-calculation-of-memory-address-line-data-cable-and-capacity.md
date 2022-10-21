@@ -2,7 +2,7 @@
 title: 存储器-地址线数据线及容量的计算
 description: 地址线数据线及容量的计算
 date: 2022-03-05 15:35
-lastmod: 2022-03-05 15:35
+update: 2022-03-05 15:35
 tags:
   - computer
 head:

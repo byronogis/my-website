@@ -2,7 +2,7 @@
 title: dolphin连接webdev
 description: kde 下使用 dolphin 连接坚果云
 date: 2022-09-10 10:46
-lastmod: 2022-09-10 10:46
+update: 2022-09-10 10:46
 tags:
   - application
 head:

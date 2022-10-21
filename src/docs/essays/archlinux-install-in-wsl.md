@@ -2,7 +2,7 @@
 title: WSL2 & Arch 安装及一些初始配置
 description: WSL2 & Arch 安装及一些初始配置
 date: 2022-05-18 10:32
-lastmod: 2022-05-18 10:32
+update: 2022-05-18 10:32
 tags:
   - wsl
   - linux

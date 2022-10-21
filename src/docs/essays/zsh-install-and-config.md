@@ -2,7 +2,7 @@
 title: Zsh 安装及初始化配置
 description: 切换默认shell为zsh，自动补全和历史记录插件，ohmyzsh
 date: 2022-04-02 22:44
-lastmod: 2022-04-02 22:44
+update: 2022-04-02 22:44
 tags:
   - application
 head:

@@ -1,5 +1,5 @@
 <script setup lang='ts'>
-
+useSiteStore().updSiteTitle('About')
 </script>
 
 <template>

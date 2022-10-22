@@ -12,8 +12,21 @@ export const useSiteStore = defineStore('site', () => {
     { text: '关于', path: '/about' },
   ]
 
+  const siteTitleRaw = 'Liam\'site'
+  const siteTitle = useTitle(siteTitleRaw)
+  const updSiteTitle = (newTitle?: string, withRaw = true) => {
+    siteTitle.value = !newTitle
+      ? siteTitleRaw
+      : withRaw
+        ? `${newTitle} | ${siteTitleRaw}`
+        : newTitle
+  }
+
   return {
     siteName,
     siteNav,
+    siteTitleRaw,
+    siteTitle,
+    updSiteTitle,
   }
 })

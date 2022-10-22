@@ -1,4 +1,5 @@
 <script setup lang="ts">
+useSiteStore().updSiteTitle('Essays')
 const route = useRoute()
 
 const component = shallowRef()
@@ -8,6 +9,7 @@ const md = () => import(`../../docs/essays/${route.query.title}.md`)
 md().then((res) => {
   component.value = res.default
   frontmatter.value = res.frontmatter
+  useSiteStore().updSiteTitle(frontmatter.value.title)
 })
 </script>
 

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+useSiteStore().updSiteTitle('404')
 const router = useRouter()
 const el = ref<HTMLDivElement>()
 const stopAnimate = () => { el.value?.classList.remove('animate__shakeY') }

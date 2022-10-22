@@ -1,4 +1,5 @@
 <script setup lang="ts">
+useSiteStore().updSiteTitle('Essays')
 const route = useRoute()
 const isTagParamsHere = computed(() => !!route.query.tag)
 

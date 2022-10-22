@@ -11,7 +11,7 @@ const mdSortByDate = (a: EssayFrontmatter, b: EssayFrontmatter) => {
 }
 
 const mdSortByUpDate = (a: EssayFrontmatter, b: EssayFrontmatter) => {
-  return +new Date(b.date) - +new Date(a.date)
+  return +new Date(b.update as string) - +new Date(a.update as string)
 }
 
 export default {

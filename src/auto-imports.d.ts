@@ -207,6 +207,7 @@ declare global {
   const useShare: typeof import('@vueuse/core')['useShare']
   const useSiteStore: typeof import('./store/site')['useSiteStore']
   const useSlots: typeof import('vue')['useSlots']
+  const useSorted: typeof import('@vueuse/core')['useSorted']
   const useSpeechRecognition: typeof import('@vueuse/core')['useSpeechRecognition']
   const useSpeechSynthesis: typeof import('@vueuse/core')['useSpeechSynthesis']
   const useStepper: typeof import('@vueuse/core')['useStepper']

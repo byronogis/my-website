@@ -5,14 +5,14 @@ const props = defineProps<{
   data: EssayFrontmatter
 }>()
 const router = useRouter()
-const openDetail = ({ _name }: EssayFrontmatter) => {
-  router.push({
-    path: 'essays/detail',
-    query: {
-      title: _name,
-    },
-  })
-}
+// const openDetail = ({ _name }: EssayFrontmatter) => {
+//   router.push({
+//     path: 'essays/detail',
+//     query: {
+//       title: _name,
+//     },
+//   })
+// }
 </script>
 
 <template>
@@ -21,16 +21,21 @@ const openDetail = ({ _name }: EssayFrontmatter) => {
     class="w-full"
     text-left
   >
-    <h2
+    <RouterLink
       class="essay-item-title"
-      font-700
-      my-2
+      text-6 font-700
+      decoration-none hover:underline
       cursor-pointer
-      hover:underline
-      @click="openDetail(props.data)"
+      my-2
+      :to="{
+        path: 'essays/detail',
+        query: {
+          title: props.data._name,
+        },
+      }"
     >
       {{ props.data.title }}
-    </h2>
+    </RouterLink>
     <div
       class="essay-item-description"
       mt-4

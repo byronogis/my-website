@@ -23,17 +23,10 @@ md().then((res) => {
     >
       {{ frontmatter?.title }}
     </h1>
-    <div
-      class="ped-info"
-      pb-4
-      grid grid-cols-2
-    >
-      <BaseTag :data="frontmatter?.tags || []" />
-      <div text-14px>
-        时间:
-        <span px-1>{{ frontmatter?.date }}</span>
-      </div>
+    <div class="ped-description" pb-4 opacity-50>
+      {{ frontmatter.description }}
     </div>
+    <EssayInfo :data="frontmatter" pb-4 />
     <BaseDivider />
     <component
       :is="component"

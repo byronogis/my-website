@@ -11,6 +11,7 @@ declare module '@vue/runtime-core' {
     BaseHeader: typeof import('./components/BaseHeader.vue')['default']
     BaseLoading: typeof import('./components/BaseLoading.vue')['default']
     BaseTag: typeof import('./components/BaseTag.vue')['default']
+    EssayInfo: typeof import('./components/EssayInfo.vue')['default']
     EssayList: typeof import('./components/EssayList.vue')['default']
     EssayListItem: typeof import('./components/EssayListItem.vue')['default']
     EssayTag: typeof import('./components/EssayTag.vue')['default']

@@ -2,7 +2,7 @@
 title: Arch 一些软件安装
 description: archlinux 使用中一些自用软件的安装记录
 date: 2022-06-03 12:12
-update: 2022-06-13 10:40
+update: 2022-10-23 21:40
 tags:
   - linux
   - application
@@ -162,6 +162,7 @@ paru -S qtscrcpy
 > [arch&qv2ray使用](https://github.com/ArchLinuxStudio/ArchLinuxTutorial/blob/master/docs/rookie/transparentProxy.md)  
 > [Qv2ray](https://github.com/Qv2ray/Qv2ray)  
 > [cgproxy 透明代理](https://github.com/springzfx/cgproxy)  
+> [透明代理](https://arch.icekylin.online/rookie/transparent.html)
 
 ```bash
 pacman -S v2ray
@@ -182,6 +183,33 @@ systemctl stop cgproxy.service
 export https_proxy=http://127.0.0.1:8889
 export http_proxy=http://127.0.0.1:8889
 export all_proxy=http://127.0.0.1:8889
+```
+
+## dicker
+
+```bash
+# 安装
+pacman -S docker
+
+# 添加用户组(以使当前用户直接执行 docker)
+usermod -aG docker ${USER}
+
+# 启动服务
+systemctl start docker
+
+# 检查
+docker -v
+docker info
+```
+
+## 坚果云
+
+```bash
+# 安装 archlinux/aur
+pacman -S nutstore
+
+# 选择性同步配置文件
+# ~/.nutstore/db/customExtRules.conf
 ```
 
 ## pacman 的一些参数使用

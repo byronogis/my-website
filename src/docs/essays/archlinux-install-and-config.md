@@ -2,7 +2,7 @@
 title: Arch 安装及初始化配置
 description: UEFI system-boot btrfs  @ @home kde plasma
 date: 	2022-05-31 23:28
-update: 	2022-08-24 22:19
+update: 	2022-10-24 07:30
 tags:
   - linux
 head:
@@ -633,6 +633,9 @@ vim /etc/fstab
 >
 
 ```bash
+# root 用户模式
+su
+
 # wget 命令行下载工具
 # bc 命令行计算器
 pacman -S wget bc
@@ -647,21 +650,21 @@ gcc -O2 -o btrfs_map_physical btrfs_map_physical.c
 ./btrfs_map_physical /swap/swapfile
 
 # physical offset
-## `sudo ./btrfs_map_physical /swap/swapfile` 的结果 PHYSICAL OFFSET 位于第九列，取不算行头对应的第一行的值
-sudo ./btrfs_map_physical /swap/swapfile | cut -f 9 | head -2 | tail -1
+## `./btrfs_map_physical /swap/swapfile` 的结果 PHYSICAL OFFSET 位于第九列，取不算行头对应的第一行的值
+./btrfs_map_physical /swap/swapfile | cut -f 9 | head -2 | tail -1
 
 # PAGESIZE
-sudo getconf PAGESIZE
+getconf PAGESIZE
 
 # physical offset / PAGESIZE，计算得到商（ resume_offset ）
-echo `sudo ./btrfs_map_physical /swap/swapfile | cut -f 9 | head -2 | tail -1` / `sudo getconf PAGESIZE` | bc
+echo `./btrfs_map_physical /swap/swapfile | cut -f 9 | head -2 | tail -1` / `sudo getconf PAGESIZE` | bc
 
 # 打印resume（ resume ）
-sudo blkid -s UUID -o value /dev/mapper/cryptroot 
+blkid -s UUID -o value /dev/mapper/cryptroot 
 
 # 存到会话变量里
-export myresumeoffset=`echo \`sudo ./btrfs_map_physical /swap/swapfile | cut -f 9 | head -2 | tail -1\` / \`sudo getconf PAGESIZE\` | bc`
-export myresume=`sudo blkid -s UUID -o value /dev/mapper/cryptroot`
+export myresumeoffset=`echo \`./btrfs_map_physical /swap/swapfile | cut -f 9 | head -2 | tail -1\` / \`getconf PAGESIZE\` | bc`
+export myresume=`blkid -s UUID -o value /dev/mapper/cryptroot`
 
 # 配置引导程序
 ## 在起初创建文件时使用了 -e 参数以及 \c 特殊字符，这两个作用就是在最后不添加换行符号
@@ -670,13 +673,13 @@ echo "resume=UUID=$myresume resume_offset=$myresumeoffset" >> /boot/loader/entri
 echo "resume=UUID=$myresume resume_offset=$myresumeoffset" >> /boot/loader/entries/arch-fallback.conf
 
 # 配置Initramfs
-sudo vim /etc/mkinitcpio.conf
+vim /etc/mkinitcpio.conf
 
 # 对应修改，添加 resume，注意位置顺序
 HOOKS=(base udev autodetect modconf block encrypt filesystems resume keyboard fsck)
 
 # 生成新的参数配置
-sudo mkinitcpio -p linux
+mkinitcpio -p linux
 
 # 重启以应用
 reboot
@@ -699,7 +702,7 @@ systemctl hibernate
 
 ```bash
 # 准备克隆
-pacman -S git
+sudo pacman -S git
 
 git clone https://aur.archlinux.org/paru-bin
 

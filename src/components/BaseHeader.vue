@@ -1,12 +1,11 @@
 <script setup lang="ts">
 const props = defineProps<{
   navs: { text: string; path: string; outer?: boolean }[]
+  title: string
 }>()
 
 const windowObj = window
 const router = useRouter()
-const siteStore = useSiteStore()
-// console.log(router)
 </script>
 
 <template>
@@ -25,7 +24,7 @@ const siteStore = useSiteStore()
       @click="router.push('/')"
     >
       <img src="/public/favicon.svg" alt="" h-8>
-      <span ml-4 text-5>{{ siteStore.siteName }}</span>
+      <span ml-4 text-5>{{ props.title }}</span>
     </div>
     <div class="bh-right">
       <span

@@ -5,6 +5,13 @@ const route = useRoute()
 const component = shallowRef()
 const frontmatter = ref()
 
+// 借用 markdown-it 生成的目录
+const pedMain = ref<Element>()
+watchEffect(() => {
+  const toc = pedMain.value?.querySelector('.markdown-body .table-of-contents')
+  toc && document.querySelector('.ped-toc .markdown-body')?.appendChild(toc.cloneNode(true))
+})
+
 const md = () => import(`../../docs/essays/${route.query.title}.md`)
 md().then((res) => {
   component.value = res.default
@@ -37,7 +44,8 @@ md().then((res) => {
       />
     </div>
     <div class="ped-toc" pl-8>
-      <!--  -->
+      <!-- 添加类名 markdown-body 以借用样式 -->
+      <div class="markdown-body" style="max-height: calc(100vh - 6em);" overflow-auto fixed />
     </div>
   </div>
 </template>
@@ -60,6 +68,11 @@ md().then((res) => {
       display: none;
     }
   }
+}
+
+/* 隐藏正文中的目录， 仅使用右侧展示目录 */
+.ped-main .markdown-body .table-of-contents {
+  display: none;
 }
 </style>
 

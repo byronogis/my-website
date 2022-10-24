@@ -6,6 +6,8 @@ tags:
 date: 2022-10-17 10:00
 ---
 
+[[toc]]
+
 - 首先打开注册表，找到这个路径
 
 `计算机\HKEY_CURRENT_USER\Software\Microsoft\InputMethod\Settings\CHS`

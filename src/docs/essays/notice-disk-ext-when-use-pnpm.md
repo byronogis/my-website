@@ -12,6 +12,8 @@ head:
 ---
 
 
+[[toc]]
+
 ## 情况描述
 
 依靠 pnpm 使用脚手架创建 vue 项目时，在移动硬盘上安装 node 包发生以下报错 "command failed: pnpm install --reporter silent --shamefully-hoist"，寻查无果，后觉察到是由于使用的文件系统（exFAT）不支持硬链接所致

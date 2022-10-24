@@ -12,6 +12,8 @@ head:
 ---
 
 
+[[toc]]
+
 ## ohmyzsh内置主题列表
 
 进入 [ohmyzsh内置主题列表](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes) 查看截图挑选(或者浏览器ctrl+f,使用关键词查询)，然后修改.zshrc文件中的ZSH_THEME变量，然后重启zsh即可。

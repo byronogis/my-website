@@ -8,6 +8,8 @@ tags:
   - application
 ---
 
+[[toc]]
+
 > 省略了相关的 sudo，提示需要权限提升时行首添加 sudo 重新执行即可  
 > AUR 选用的是 paru（无强制关联）
 > 由于使用的kde所以部分首选了kde配套的应用

@@ -11,7 +11,9 @@ head:
       content: node nvs
 ---
 
-[toc]
+
+[[toc]]
+
 
 > [Node Version Switcher](https://github.com/jasongin/nvs)  
 > windows上也可以使用的node版本管理工具  

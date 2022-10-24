@@ -12,6 +12,8 @@ head:
       content: termux linux android
 ---
 
+[[toc]]
+
 > [Termux](https://github.com/termux/termux-app)  
 > Termux is an Android terminal emulator and Linux environment app that works directly with no rooting or setup required. A minimal base system is installed automatically - additional packages are available using the APT package manager.  
 > Termux 是一种 Android 终端仿真器和Linux环境应用程序，直接工作，无需 root 或设置。自动安装最小的基本系统 - 使用 APT 软件包管理器提供其他软件包。  

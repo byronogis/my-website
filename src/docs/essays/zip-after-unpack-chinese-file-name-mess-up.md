@@ -11,6 +11,8 @@ head:
       content: linux arch ark unzip
 ---
 
+[[toc]]
+
 > [zip compressed package is garbled](https://wiki.archlinux.org/title/Localization/Simplified_Chinese#zip_compressed_package_is_garbled)
 
 > Under non-utf8 coding environments (generally the Chinese environment under Windows), do not use zip for compressions (7z is recommended).  

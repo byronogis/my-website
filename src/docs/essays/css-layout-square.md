@@ -11,6 +11,8 @@ head:
       content: CSS flex grid
 ---
 
+[[toc]]
+
 ## 页面
 
 ![](./assets/css-square-flex-grid.png)

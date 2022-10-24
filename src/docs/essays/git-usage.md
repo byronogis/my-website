@@ -11,8 +11,9 @@ head:
       content: git ssh branch
 ---
 
-完整目录：
-[toc]
+
+[[toc]]
+
 
 ## git配置
 

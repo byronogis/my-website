@@ -12,8 +12,8 @@ head:
       content: wsl wsl2 arch
 ---
 
-完整目录：
-[toc]
+[[toc]]
+
 
 ## 启用 WSL
 

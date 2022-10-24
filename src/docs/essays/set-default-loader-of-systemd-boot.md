@@ -6,6 +6,8 @@ tags:
 date: 2022-10-19 15:35
 ---
 
+[[toc]]
+
 > 安装 archlinux 时默认包含了 systemd-boot, 可直接安装  
 > systemd-boot 会自动扫描 Windows 启动管理器添加到启动项  
 

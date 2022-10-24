@@ -11,6 +11,8 @@ head:
       content: Arch 指纹 KDE SDDM  
 ---
 
+[[toc]]
+
 > 20XKA001CD ThinkPad T14 Gen 2a  
 > KDE + SDDM  
 >

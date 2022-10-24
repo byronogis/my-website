@@ -11,6 +11,8 @@ head:
       content: Arch 安装 UEFI systemd-boot crypt btrfs  @ @home @var @swap kde plasma sddm 休眠 交换文件 timeshift aur aur-helper
 ---
 
+[[toc]]
+
 > [arch wiki](https://wiki.archlinux.org/title/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87))  
 > [安装参考1](https://www.bilibili.com/video/BV1ub4y1Y7pK?spm_id_from=333.1007.top_right_bar_window_custom_collection.content.click) | 
 > [安装参考2](https://www.bilibili.com/video/BV1Wu411o7Kd) | 
@@ -32,9 +34,6 @@ head:
 > 
 > timeshift 快照备份  
 > 
-
-完整目录：
-[toc]
 
 ## 调整控制台字体（可选）
 

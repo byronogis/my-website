@@ -11,6 +11,8 @@ head:
       content: zsh ohmyzsh
 ---
 
+[[toc]]
+
 > [Zsh](https://zsh.sourceforge.io/) is a shell designed for interactive use, although it is also a powerful scripting language. 
 
 ## Zsh 安装

@@ -11,6 +11,8 @@ head:
       content: Arch kernel linux systemd-boot 
 ---
 
+[[toc]]
+
 ## 安装
 
 > [Kernel](https://wiki.archlinux.org/title/Kernel)

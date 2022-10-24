@@ -11,6 +11,8 @@ head:
       content: dolphin webdev 坚果云 nutstore
 ---
 
+[[toc]]
+
 ## 连接步骤
 
 ![](./assets//dolphin-add-webdev/dolphin-add-webdev1.png)

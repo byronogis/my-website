@@ -212,6 +212,18 @@ pacman -S nutstore
 # ~/.nutstore/db/customExtRules.conf
 ```
 
+## 罗技 Logitech
+
+> [Logitech Unifying Receiver](https://wiki.archlinux.org/title/Logitech_Unifying_Receiver)  
+> 使用接收器而非蓝牙时
+
+```bash
+# 管理程序
+sudo pacman -S solaar
+
+sudo udevadm control --reload-rules
+```
+
 ## pacman 的一些参数使用
 
 > [pacman](https://wiki.archlinux.org/title/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87))

@@ -1,11 +1,11 @@
 <script setup lang="ts">
 const props = defineProps<{
-  title: string
   navs: { text: string; path: string; outer?: boolean }[]
 }>()
 
 const windowObj = window
 const router = useRouter()
+const siteStore = useSiteStore()
 // console.log(router)
 </script>
 
@@ -21,9 +21,11 @@ const router = useRouter()
     <div
       class="bh-left"
       cursor-pointer
+      flex flex-row justify-center items-center
       @click="router.push('/')"
     >
-      {{ $props.title }}
+      <img src="/public/favicon.svg" alt="" h-8>
+      <span ml-4 text-5>{{ siteStore.siteName }}</span>
     </div>
     <div class="bh-right">
       <span

@@ -2,7 +2,7 @@ import { defineStore } from 'pinia'
 
 export const useSiteStore = defineStore('site', () => {
   // 网站标题
-  const siteName = import.meta.env.VITE_SITE_NAME
+  const siteName = 'Liam\'site'
   // 网站顶部导航
   const siteNav: { text: string; path: string; outer?: boolean }[] = [
     { text: '首页', path: '/' },
@@ -12,20 +12,18 @@ export const useSiteStore = defineStore('site', () => {
     { text: '关于', path: '/about' },
   ]
 
-  const siteTitleRaw = 'Liam\'site'
-  const siteTitle = useTitle(siteTitleRaw)
+  const siteTitle = useTitle(siteName)
   const updSiteTitle = (newTitle?: string, withRaw = true) => {
     siteTitle.value = !newTitle
-      ? siteTitleRaw
+      ? siteName
       : withRaw
-        ? `${newTitle} | ${siteTitleRaw}`
+        ? `${newTitle} | ${siteName}`
         : newTitle
   }
 
   return {
     siteName,
     siteNav,
-    siteTitleRaw,
     siteTitle,
     updSiteTitle,
   }

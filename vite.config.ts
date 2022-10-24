@@ -30,7 +30,7 @@ export default defineConfig(({ command: _commond, mode: _mode }) => {
       }),
       Pages(),
       Layouts(),
-      Markdown(),
+      Markdown({ wrapperClasses: 'markdown-body' }),
       Components({
         resolvers: [
         ],

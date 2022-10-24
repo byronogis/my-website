@@ -14,8 +14,23 @@ watch(() => route.query.tag, (tag) => {
 </script>
 
 <template>
-  <EssayList :data-list="!isTagParamsHere ? essays : essaysFilter" />
+  <div class="pages-essays-index">
+    <EssayList :data-list="!isTagParamsHere ? essays : essaysFilter" />
+  </div>
 </template>
+
+<style lang="postcss">
+.pages-essays-index {
+  display: grid;
+  grid-template-columns: 6fr 2fr;
+}
+
+@media (max-width: 640px) {
+  .pages-essays-index {
+    display: block;
+  }
+}
+</style>
 
 <route lang="yaml">
 meta:

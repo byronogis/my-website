@@ -20,6 +20,10 @@ import Unocss from 'unocss/vite'
 // PostCSS plugin to unwrap nested rules like how Sass does it.
 // See https://github.com/postcss/postcss-nested#readme
 import PostcssNested from 'postcss-nested'
+// markdown-it used
+import MarkdownItAnchor from 'markdown-it-anchor'
+import uslug from 'uslug'
+import MarkdownItTOC from 'markdown-it-table-of-contents'
 
 // https://vitejs.dev/config/
 export default defineConfig(({ command: _commond, mode: _mode }) => {
@@ -30,7 +34,14 @@ export default defineConfig(({ command: _commond, mode: _mode }) => {
       }),
       Pages(),
       Layouts(),
-      Markdown({ wrapperClasses: 'markdown-body' }),
+      Markdown({
+        builders: [],
+        markdownItSetup(md) {
+          md.use(MarkdownItAnchor, { slugify: s => uslug(s) })
+          md.use(MarkdownItTOC, { includeLevel: [2, 3, 4], containerClass: 'table-of-contents' })
+        },
+        wrapperClasses: 'markdown-body',
+      }),
       Components({
         resolvers: [
         ],

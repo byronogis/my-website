@@ -30,7 +30,7 @@ const tags = essayStore.tags
 <style lang="postcss">
 .layouts-essays-main {
   display: grid;
-  grid-template-columns: 2fr 6fr 2fr;
+  grid-template-columns: 2fr 8fr;
 }
 
 @media (max-width: 640px) {

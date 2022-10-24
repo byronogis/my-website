@@ -18,22 +18,27 @@ md().then((res) => {
     <BaseLoading />
   </div>
   <div v-else class="pages-essays-detail">
-    <h1
-      class="ped-title"
-      pt-4 pb-8
-      sticky top-15 z-9
-    >
-      {{ frontmatter?.title }}
-    </h1>
-    <div class="ped-description" pb-4 opacity-50>
-      {{ frontmatter.description }}
+    <div ref="pedMain" class="ped-main">
+      <h1
+        class="ped-title"
+        pt-4 pb-8
+        sticky top-15 z-9
+      >
+        {{ frontmatter?.title }}
+      </h1>
+      <div class="ped-description" pb-4 opacity-50>
+        {{ frontmatter.description }}
+      </div>
+      <EssayInfo :data="frontmatter" pb-4 />
+      <BaseDivider />
+      <component
+        :is="component"
+        v-highlight
+      />
     </div>
-    <EssayInfo :data="frontmatter" pb-4 />
-    <BaseDivider />
-    <component
-      :is="component"
-      v-highlight
-    />
+    <div class="ped-toc" pl-8>
+      <!--  -->
+    </div>
   </div>
 </template>
 
@@ -41,6 +46,20 @@ md().then((res) => {
 .ped-title {
   color: var(--liam-primary);
   background-color: var(--liam-bg);
+}
+
+.pages-essays-detail {
+  display: grid;
+  grid-template-columns: 6fr 2fr;
+}
+
+@media (max-width: 640px) {
+  .pages-essays-detail {
+    display: block;
+    .ped-toc {
+      display: none;
+    }
+  }
 }
 </style>
 

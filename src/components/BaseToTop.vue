@@ -1,14 +1,14 @@
 <script setup lang="ts">
 const props = defineProps<{
-  target?: HTMLElement
+  target?: string
   size?: number
 }>()
 
-const target = props.target || document.documentElement
+const target = document.querySelector(props.target || 'body')
 const size = props.size && `${props.size}px`
 
 const backToTop = () => {
-  target.scrollTo({
+  target?.scrollTo({
     top: 0,
     left: 0,
     behavior: 'smooth',

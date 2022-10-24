@@ -15,7 +15,7 @@ const props = defineProps<{
         :data="item"
         pb-2
       />
-      <BaseDivider v-if="index !== props.dataList.length - 1" />
+      <BaseDivider v-if="index !== props.dataList.length - 1" mb-2 />
     </template>
   </div>
 </template>

@@ -61,6 +61,11 @@ md().then((res) => {
   grid-template-columns: 6fr 2fr;
 }
 
+/* 隐藏正文中的目录， 仅使用右侧展示目录 */
+.ped-main .markdown-body .table-of-contents {
+  display: none;
+}
+
 @media (max-width: 640px) {
   .pages-essays-detail {
     display: block;
@@ -68,11 +73,11 @@ md().then((res) => {
       display: none;
     }
   }
-}
 
-/* 隐藏正文中的目录， 仅使用右侧展示目录 */
-.ped-main .markdown-body .table-of-contents {
-  display: none;
+  /* 移动端由于隐藏了侧边目录，因此恢复显示正文目录 */
+  .ped-main .markdown-body .table-of-contents {
+    display: block;
+  }
 }
 </style>
 

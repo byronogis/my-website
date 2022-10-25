@@ -5,11 +5,25 @@ const route = useRoute()
 const component = shallowRef()
 const frontmatter = ref()
 
-// 借用 markdown-it 生成的目录
-const pedMain = ref<Element>()
+const pagesEssaysDetail = ref<Element>()
 watchEffect(() => {
-  const toc = pedMain.value?.querySelector('.markdown-body .table-of-contents')
+  // 借用 markdown-it 生成的目录
+  const toc = pagesEssaysDetail.value?.querySelector('.markdown-body .table-of-contents')
   toc && document.querySelector('.ped-toc .markdown-body')?.appendChild(toc.cloneNode(true))
+})
+
+// 拦截目录锚点点击事件，另行处理跳转
+useEventListener(pagesEssaysDetail, 'click', (e: any) => {
+  const hash = e.target?.hash
+  if (!hash.startsWith('#'))
+    return
+
+  e.preventDefault()
+  const el = document.querySelector(decodeURI(hash))
+  el?.scrollIntoView({
+    behavior: 'smooth',
+    block: 'center',
+  })
 })
 
 const md = () => import(`../../docs/essays/${route.query.title}.md`)
@@ -24,8 +38,8 @@ md().then((res) => {
   <div v-if="!component">
     <BaseLoading />
   </div>
-  <div v-else class="pages-essays-detail">
-    <div ref="pedMain" class="ped-main">
+  <div v-else ref="pagesEssaysDetail" class="pages-essays-detail">
+    <div class="ped-main">
       <h1
         class="ped-title"
         pt-4 pb-8

@@ -20,7 +20,7 @@ const tags = essayStore.tags
       h-full w-full p-4
     >
       <div class="lem-tag">
-        <EssayTag :data="tags" fixed />
+        <EssayTag :data="tags" style="max-height: calc(100vh - 6em);" overflow-auto fixed />
       </div>
       <RouterView />
     </div>

@@ -59,7 +59,11 @@ md().then((res) => {
     </div>
     <div class="ped-toc" pl-8>
       <!-- 添加类名 markdown-body 以借用样式 -->
-      <div class="markdown-body" style="max-height: calc(100vh - 6em);" overflow-auto fixed />
+      <div
+        class="markdown-body"
+        style="max-height: calc(100vh - 6em); width: -webkit-fill-available;"
+        overflow-auto fixed
+      />
     </div>
   </div>
 </template>

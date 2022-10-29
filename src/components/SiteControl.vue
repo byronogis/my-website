@@ -7,7 +7,7 @@
 
 // const emits = defineEmits<>()
 const isExpand = ref(false)
-const gridColumns = computed(() => isExpand.value ? '1fr 1rem' : '1rem')
+const gridColumns = computed(() => isExpand.value ? '1fr 2rem' : '2rem')
 
 const siteStore = useSiteStore()
 const fontSizeChange = (e: Event) => {
@@ -22,11 +22,17 @@ const fontSizeChange = (e: Event) => {
     fixed z-11
     top-0 bottom-0 right-4
     m-auto
+    shadow-lg
+    liam-bg
+    opacity-60
+    hover:opacity-100
   >
     <div
       v-if="isExpand"
     >
-      <div>
+      <div
+        p-4
+      >
         <span>字体：</span>
         <input
           type="range" min="12" max="26"
@@ -38,15 +44,10 @@ const fontSizeChange = (e: Event) => {
       </div>
     </div>
     <div
-      v-if="!isExpand"
-      i-carbon-chevron-left
+      :class="!isExpand ? 'i-carbon-chevron-left' : 'i-carbon-chevron-right'"
       cursor-pointer
-      @click="isExpand = !isExpand"
-    />
-    <div
-      v-else
-      i-carbon-chevron-right
-      cursor-pointer
+      py-10
+      w-8 h-8
       @click="isExpand = !isExpand"
     />
   </div>

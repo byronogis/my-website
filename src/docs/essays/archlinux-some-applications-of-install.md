@@ -2,7 +2,7 @@
 title: Arch 一些软件安装
 description: archlinux 使用中一些自用软件的安装记录
 date: 2022-06-03 12:12
-update: 2022-10-23 21:40
+update: 2022-10-29 13:06
 tags:
   - linux
   - application
@@ -156,6 +156,26 @@ pacman -S scrcpy
 
 # 或
 paru -S qtscrcpy
+```
+
+### scrcpy 命令行使用
+
+```bash
+# 开启投屏
+scrcpy
+
+# change size
+scrcpy -m 1024
+
+# change bit-rate， default bit-rate is 8 Mbps
+scrcpy -b 2M
+
+# 录屏
+scrcpy -r file.mkv
+# 无镜像录屏
+scrcpy -Nr file.mkv
+
+# ...
 ```
 
 ## v2ray 代理

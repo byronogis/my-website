@@ -12,6 +12,7 @@ window.addEventListener('scroll', (e: any) => {
 <template>
   <RouterView />
   <BaseToTop v-show="!store.isTop" target="#app" :size="30" />
+  <SiteControl />
 </template>
 
 <style scoped>

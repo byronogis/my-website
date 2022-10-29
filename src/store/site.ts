@@ -21,10 +21,25 @@ export const useSiteStore = defineStore('site', () => {
         : newTitle
   }
 
+  // 网站设置
+  // 字体
+  const siteFontSize = ref(localStorage.getItem('site-font-size') || '14')
+  const updSiteFontSize = (size: string) => {
+    localStorage.setItem('site-font-size', size)
+    siteFontSize.value = size
+  }
+  watch(siteFontSize, () => {
+    document.documentElement.style.fontSize = `${siteFontSize.value}px`
+  }, {
+    immediate: true,
+  })
+
   return {
     siteName,
     siteNav,
     siteTitle,
     updSiteTitle,
+    siteFontSize,
+    updSiteFontSize,
   }
 })

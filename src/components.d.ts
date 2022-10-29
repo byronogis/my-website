@@ -18,5 +18,6 @@ declare module '@vue/runtime-core' {
     EssayTag: typeof import('./components/EssayTag.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SiteControl: typeof import('./components/SiteControl.vue')['default']
   }
 }

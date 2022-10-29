@@ -18,10 +18,10 @@ const backToTop = () => {
 
 <template>
   <div
-    class="base-to-top"
+    class="base-to-top bottom-10% right-10%"
     title="点击回到顶部"
     :style="{ width: size, height: size }"
-    fixed bottom-20 right-20
+    fixed
     cursor-pointer
     i-carbon-up-to-top
     @click="backToTop"

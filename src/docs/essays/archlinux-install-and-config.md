@@ -472,10 +472,12 @@ systemctl enable bluetooth
 ## 声音
 
 > [Advanced Linux Sound Architecture，ALSA](https://wiki.archlinux.org/title/Advanced_Linux_Sound_Architecture_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87))    
-> [PulseAudio](https://wiki.archlinux.org/title/PulseAudio_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87))  
+> ~~[PulseAudio](https://wiki.archlinux.org/title/PulseAudio_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87))~~  
+> [PipeWire](https://wiki.archlinux.org/title/PipeWire)  
 
 ```bash
-pacman -S alsa-utils pulseaudio pulseaudio-bluetooth
+#pacman -S alsa-utils pulseaudio pulseaudio-bluetooth
+pacman -S pipewire pipewire-alsa pipewire-pulse pipewire-jack xdg-desktop-portal xdg-desktop-portal-kde
 ```
 
 ## 打印机
@@ -496,13 +498,7 @@ systemctl enable cups
 ```bash
 pacman -S fcitx5-im fcitx5-chinese-addons
 
-# 主题（可选）
-pacman -S fcitx5-material-color fcitx5-nord 
-paru -S fcitx5-breeze
-
 # 字库（推荐）
-# fcitx5-pinyin-moegirl，可选，需提前配置 archlinuxcn
-# fcitx5-pinyin-zhwiki，之前也是需要配置 archlinuxcn 的，现在已经包含到启用的默认源中了
 pacman -S fcitx5-pinyin-zhwiki
 
 # 配置环境变量,以在应用程序中正常使用
@@ -540,7 +536,7 @@ pacman -S kde-applications
 ### https://archlinux.org/packages/extra/any/kde-applications-meta/
 pacman -S kde-accessibility-meta kde-system-meta ...
 ## 2. 或单独安装所需的软件：文件管理器 浏览器 文本编辑器 终端
-pacman -S dolphin chromium kwrite konsole
+pacman -S dolphin chromium kate konsole
 
 # 一些工具软件（可选）
 # vim 终端中的文本编辑器

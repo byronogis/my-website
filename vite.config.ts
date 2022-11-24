@@ -40,7 +40,7 @@ export default defineConfig(({ command: _commond, mode: _mode }) => {
           md.use(MarkdownItAnchor, { slugify: s => uslug(s) })
           md.use(MarkdownItTOC, { includeLevel: [2, 3, 4], containerClass: 'table-of-contents' })
         },
-        wrapperClasses: 'markdown-body',
+        wrapperClasses: 'docs-markdown-body',
       }),
       Components({
         resolvers: [

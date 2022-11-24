@@ -8,8 +8,8 @@ const frontmatter = ref()
 const pagesEssaysDetail = ref<Element>()
 watchEffect(() => {
   // 借用 markdown-it 生成的目录
-  const toc = pagesEssaysDetail.value?.querySelector('.markdown-body .table-of-contents')
-  toc && document.querySelector('.ped-toc .markdown-body')?.appendChild(toc.cloneNode(true))
+  const toc = pagesEssaysDetail.value?.querySelector('.docs-markdown-body .table-of-contents')
+  toc && document.querySelector('.ped-toc .docs-markdown-body')?.appendChild(toc.cloneNode(true))
 })
 
 // 拦截目录锚点点击事件，另行处理跳转
@@ -67,9 +67,9 @@ md().then((res) => {
       />
     </div>
     <div class="ped-toc" pl-8>
-      <!-- 添加类名 markdown-body 以借用样式 -->
+      <!-- 添加类名 docs-markdown-body 以借用样式 -->
       <div
-        class="markdown-body"
+        class="docs-markdown-body"
         style="max-height: calc(100vh - 6em); width: -webkit-fill-available;"
         overflow-auto fixed
       />
@@ -89,7 +89,7 @@ md().then((res) => {
 }
 
 /* 隐藏正文中的目录， 仅使用右侧展示目录 */
-.ped-main .markdown-body .table-of-contents {
+.ped-main .docs-markdown-body .table-of-contents {
   display: none;
 }
 
@@ -102,7 +102,7 @@ md().then((res) => {
   }
 
   /* 移动端由于隐藏了侧边目录，因此恢复显示正文目录 */
-  .ped-main .markdown-body .table-of-contents {
+  .ped-main .docs-markdown-body .table-of-contents {
     display: block;
   }
 }

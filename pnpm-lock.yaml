@@ -1,11 +1,16 @@
 lockfileVersion: 5.4
 
+patchedDependencies:
+  '@liamrad/vssue-vue3@0.1.1':
+    hash: fvveoiebj24w3j4qhyh445ziki
+    path: patches/@liamrad__vssue-vue3@0.1.1.patch
+
 specifiers:
   '@antfu/eslint-config': ^0.27.0
   '@commitlint/cli': ^17.1.2
   '@commitlint/config-conventional': ^17.1.0
   '@iconify-json/carbon': ^1.1.9
-  '@liamrad/vssue-vue3': ^0.1.0
+  '@liamrad/vssue-vue3': ^0.1.1
   '@types/nprogress': ^0.2.0
   '@vitejs/plugin-vue': ^3.1.2
   '@vssue/api-github-v4': ^1.4.7
@@ -34,7 +39,7 @@ specifiers:
   vue-tsc: ^1.0.8
 
 dependencies:
-  '@liamrad/vssue-vue3': 0.1.0
+  '@liamrad/vssue-vue3': 0.1.1_fvveoiebj24w3j4qhyh445ziki
   '@vssue/api-github-v4': 1.4.7
   '@vueuse/core': 9.3.1_vue@3.2.41
   animate.css: 4.1.1
@@ -496,9 +501,10 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.14
     dev: true
 
-  /@liamrad/vssue-vue3/0.1.0:
-    resolution: {integrity: sha512-FAbxXDxJ67dU7dI7BaO3qzetvznTc2th1sgmgVFmZxpaDTUUQhT2RUpybzsBNlBUqC+Ru6PYmX3EZjj2gQ5F4g==}
+  /@liamrad/vssue-vue3/0.1.1_fvveoiebj24w3j4qhyh445ziki:
+    resolution: {integrity: sha512-qgYi/V0EdHVmyYcWXtbmhatb25fCtNq5y3R7Y/7iDx4Wle01DvvBJnLksmqOsFjyDM5sDKyyWhvylf7edpTQdQ==}
     dev: false
+    patched: true
 
   /@nodelib/fs.scandir/2.1.5:
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}

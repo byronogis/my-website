@@ -1,0 +1,13 @@
+diff --git a/dist/vssue-vue3.js b/dist/vssue-vue3.js
+index 85faa4e9d1aec65fb9a8d6d6eb757285f3496daa..89c903dfe473055fb9b99a239f6dffa10dea8984 100644
+--- a/dist/vssue-vue3.js
++++ b/dist/vssue-vue3.js
+@@ -7348,7 +7348,7 @@ function useVssueStore() {
+         title: issueTitle.value,
+         content: await VssueState.options.issueContent({
+           options: VssueState.options,
+-          url: getCleanURL(window.location.href)
++          url: window.location.href,
+         }),
+         accessToken: VssueState.accessToken
+       });

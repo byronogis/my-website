@@ -56,6 +56,15 @@ md().then((res) => {
         :is="component"
         v-highlight
       />
+      <BaseDivider />
+      <Vssue
+        :options="{
+          prefix: '[Essay] ',
+          labels: ['Essay'],
+          autoCreateIssue: false,
+        }"
+        :title="component.__name"
+      />
     </div>
     <div class="ped-toc" pl-8>
       <!-- 添加类名 markdown-body 以借用样式 -->

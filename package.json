@@ -14,6 +14,8 @@
     "lint-staged": "lint-staged"
   },
   "dependencies": {
+    "@liamrad/vssue-vue3": "^0.1.0",
+    "@vssue/api-github-v4": "^1.4.7",
     "@vueuse/core": "^9.3.1",
     "animate.css": "^4.1.1",
     "highlight.js": "^11.6.0",

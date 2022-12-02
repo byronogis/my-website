@@ -46,9 +46,9 @@ const matchPath = (path: string) => {
         {{ text }}
         <span
           v-if="outer"
-          absolute top--1 right--1
-          w-2 h-2
-          i-carbon-arrow-up-right
+          absolute top-0 right--3
+          w-3 h-3
+          i-octicon-link-external-24
         />
       </span>
     </div>

@@ -2,7 +2,7 @@
 title: Arch 一些软件安装
 description: archlinux 使用中一些自用软件的安装记录
 date: 2022-06-03 12:12
-update: 2022-12-12 12:30
+update: 2022-12-12 13:00
 tags:
   - linux
   - application
@@ -107,6 +107,20 @@ modprobe kvm_amd nested=1
 ## 永久生效
 ## 编辑(创建)/etc/modprobe.d/kvm_amd.conf, 内容如下:
 options kvm_amd nested=1
+```
+
+### windows虚拟机调整分辨率
+
+> [virtio-win](https://aur.archlinux.org/packages/virtio-win)  
+
+```bash
+# 安装驱动 virtio-win 
+paru -S virtio-win
+# or archlinuxcn
+sudo pacman -S virtio-win
+
+# 然后将 iso 挂载到虚拟机里面安装
+# /var/lib/libvirt/images
 ```
 
 

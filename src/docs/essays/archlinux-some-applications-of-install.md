@@ -2,7 +2,7 @@
 title: Arch 一些软件安装
 description: archlinux 使用中一些自用软件的安装记录
 date: 2022-06-03 12:12
-update: 2022-10-29 13:06
+update: 2022-12-12 12:30
 tags:
   - linux
   - application
@@ -43,7 +43,7 @@ tags:
 # spectacle		截图
 # vlc			音视频播放
 # yakuake		下拉式终端
-pacman -S vim wget curl aria2 git zsh tree chromium neofetch obs-studio gwenview kamoso kate kcalc konsole kwave okular spectacle vlc yakuake
+sudo pacman -S vim wget curl aria2 git zsh tree chromium neofetch obs-studio gwenview kamoso kate kcalc konsole kwave okular spectacle vlc yakuake
 
 
 # typora 					MD编辑器
@@ -59,10 +59,10 @@ paru -S typora visual-studio-code-bin wechat-uos listen1-desktop-appimage rustde
 > [arch wiki](https://wiki.archlinux.org/title/VirtualBox)
 
 ```bash
-ls /etc/mkinitcpio.d
+uname
 
-pacman -S  virtualbox 
-# 根据上面 ls 的打印的名字二选一安装vbox 内核模块
+sudo pacman -S  virtualbox 
+# 根据上面打印的名字二选一安装vbox 内核模块
 virtualbox-host-modules-arch # linux
 virtualbox-host-dkms		 # 其它 如:linux-lts
 
@@ -71,16 +71,44 @@ virtualbox-host-dkms		 # 其它 如:linux-lts
 modprobe vboxdrv
 
 # 添加用户到 vboxusers 用户组
-usermod -aG vboxusers liamrad
+sudo usermod -aG vboxusers $(whoami)
 
 # 安装功能扩展包 或配置archlinuxcn 后直接 pacman
-paru -S  virtualbox-ext-oracle
+sudo paru -S  virtualbox-ext-oracle
 
 # The official VirtualBox Guest Additions ISO image
 # 使用共享剪切板或拖放所需
 ## 也可以不安装，在虚拟机里点击相应高级功能时会提示下载
-pacman -S --asdeps  virtualbox-guest-iso
+sudo pacman -S --asdeps  virtualbox-guest-iso
 ```
+
+## qemu/kvm 虚拟机
+
+
+```bash
+# 安装软件包
+sudo pacman -S qemu-full virt-manager
+
+# 启动服务
+sudo systemctl enable --now libvirtd.service
+
+# 添加用户到用户组
+sudo usermod -aG libvirt $(whoami)
+
+
+# 检查是否支持cpu虚拟化
+## 对于 Intel 处理器来说是 VT-x，对于 AMD 处理器来说是 AMD-V
+LC_ALL=C lscpu | grep Virtualization
+
+# 嵌套虚拟化
+## amd, intel 注意替换 为 kvm_intel
+modprobe -r kvm_amd
+modprobe kvm_amd nested=1
+## 永久生效
+## 编辑(创建)/etc/modprobe.d/kvm_amd.conf, 内容如下:
+options kvm_amd nested=1
+```
+
 
 ## LibreOffice office套件
 
@@ -88,18 +116,18 @@ pacman -S --asdeps  virtualbox-guest-iso
 
 ```bash
 # 本体
-pacman -S libreoffice-still 
+sudo pacman -S libreoffice-still 
 
 # 中文包
-pacman -S --asdeps libreoffice-still-zh-cn
+sudo pacman -S --asdeps libreoffice-still-zh-cn
 ```
 
 ## ~~TeamViewer 远控~~
 
-> 推荐 rustdesk
+> 推荐 rustdesk `sudo paru rustdesk-bin`  
 
 ```bash
-pacman -S teamviewer
+sudo pacman -S teamviewer
 
 # 安装完成后终端有如下提示，即要运行需要提前启动后台守护服务
 ## The Teamviewer daemon must be running for Teamviewer to work.
@@ -112,7 +140,7 @@ sudo systemctl enable --now teamviewerd
 ## qBittorrent
 
 ```bash
-pacman -S qbittorrent
+sudo pacman -S qbittorrent
 
 # tracker github
 https://ngosang.github.io/trackerslist/trackers_all_ip.txt
@@ -133,11 +161,11 @@ paru -S timeshift-bin timeshift-autosnap
 > [github](https://github.com/flameshot-org/flameshot#usage)
 
 ```bash
-pacman -S flameshot
+sudo pacman -S flameshot
 
 # 有可选依赖说以支持 wayland，但现在在用x11所以实际未测试效果
 ## xdg-desktop-portal: for wayland support, you will need the implementation for your wayland desktop environment
-pacman -S xdg-desktop-portal
+sudo pacman -S xdg-desktop-portal
 
 # kde 快捷键文件(可选)
 ## 系统设置 -> 快捷键 -> 自定义快捷键， 导入后记得检查一些命令涉及目录的存在，
@@ -152,7 +180,7 @@ wget https://raw.githubusercontent.com/flameshot-org/flameshot/master/docs/short
 > [qtscrcpy](https://github.com/barry-ran/QtScrcpy)		scrcpy 的 第三方 gui 版
 
 ```bash
-pacman -S scrcpy
+sudo pacman -S scrcpy
 
 # 或
 paru -S qtscrcpy
@@ -187,7 +215,7 @@ scrcpy -Nr file.mkv
 > [透明代理](https://arch.icekylin.online/rookie/transparent.html)
 
 ```bash
-pacman -S v2ray
+sudo pacman -S v2ray
 
 # 图形界面管理及功能扩展
 paru -S qv2ray  qv2ray-plugin-ssr-git  qv2ray-plugin-command-git  cgproxy
@@ -207,11 +235,11 @@ export http_proxy=http://127.0.0.1:8889
 export all_proxy=http://127.0.0.1:8889
 ```
 
-## dicker
+## docker
 
 ```bash
 # 安装
-pacman -S docker
+sudo pacman -S docker
 
 # 添加用户组(以使当前用户直接执行 docker)
 usermod -aG docker ${USER}
@@ -228,7 +256,7 @@ docker info
 
 ```bash
 # 安装 archlinux/aur
-pacman -S nutstore
+sudo pacman -S nutstore
 
 # 选择性同步配置文件
 # ~/.nutstore/db/customExtRules.conf

@@ -4,6 +4,7 @@ description:
 tags:
   - linux
 date: 2022-12-10 06:21
+update: 2022-12-12 12:30
 ---
 
 [[toc]]
@@ -13,8 +14,8 @@ date: 2022-12-10 06:21
 ## 安装
 
 ```bash
-git clone git://git.suckless.org/dwm
-cd dwm
+git clone git://git.suckless.org/dwm ~/.dwm
+cd ~/.dwm
 sudo make clean install
 ```
 
@@ -30,7 +31,7 @@ sudo make clean install
 cp /etc/X11/xinit/xinitrc ~/.xinitrc
 
 # 使可执行
-chmod +x ~/./xinitrc
+chmod +x ~/.xinitrc
 ```
 
 2. 去掉不需要的命令

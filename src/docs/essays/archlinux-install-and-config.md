@@ -2,7 +2,7 @@
 title: Arch 安装及初始化配置
 description: UEFI system-boot btrfs  @ @home kde plasma
 date: 	2022-05-31 23:28
-update: 	2022-10-24 07:30
+update: 	2022-12-12 12:30
 tags:
   - linux
 head:
@@ -909,6 +909,7 @@ paru -S zramd
 vim /etc/default/zramd
 
 # 启动
+## --now Start or stop unit after enabling or disabling it
 systemctl enable --now zramd.service
 
 # 查看是否多出一个swap 设备

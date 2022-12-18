@@ -6,11 +6,7 @@ const isTagParamsHere = computed(() => !!route.query.tag)
 const essayStore = useEssayStore()
 
 const essays = essayStore.essays
-const essaysFilter = ref()
-
-watch(() => route.query.tag, (tag) => {
-  essaysFilter.value = essayStore.essaysFilterWithTag(tag as string)
-}, { immediate: true })
+const essaysFilter = computed(() => essayStore.essaysFilterWithTag(route.query.tag as string))
 </script>
 
 <template>

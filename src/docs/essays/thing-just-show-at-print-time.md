@@ -1,14 +1,16 @@
 ---
 title: 只在打印时出现指定内容
-description: 监听(打印)媒体事件, 动态插入动态删除
+description: 方案一:监听打印事件动态插入内容; 方案二:利用媒体查询针对性设置样式
 tags:
   - html
 date: 2022-12-19 16:31
+update: 2022-12-19 23:00
 
 ---
 
 [[toc]]
 
+## 方案一:监听打印事件动态插入内容
 
 ### 操作步骤
 
@@ -50,6 +52,36 @@ date: 2022-12-19 16:31
         }
       })
   </script>
+</body>
+</html>
+```
+
+## 方案二:利用媒体查询针对性设置样式
+
+### 最小实现
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>print</title>
+  <style>
+    .example {
+      display: none;
+    }
+    @media print {
+      .example {
+        display: block;
+      }
+
+    }
+  </style>
+</head>
+<body>
+  <p class="example">打印设备中显示</p>
 </body>
 </html>
 ```

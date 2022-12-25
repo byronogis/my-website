@@ -5,6 +5,7 @@ date: 2021-11-24 15:20
 update: 2021-11-24 15:20
 tags:
   - computer
+  - pnpm
 head:
   - - meta
     - name: keywords

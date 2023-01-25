@@ -577,7 +577,8 @@ reboot
 su
 
 # 创建交换文件
-btrfs filesystem mkswapfile /swap/swapfile
+## 文件大小建议为内存的1-1.5倍，我的内存是32G, 设置 40960 为40G （40 * 1024）
+btrfs filesystem mkswapfile --size=40g /swap/swapfile
 
 # 启用 swap
 swapon /swap/swapfile

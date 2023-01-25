@@ -576,22 +576,8 @@ reboot
 # root 用户模式
 su
 
-# 禁用写时复制
-## /swap 就是前面挂载 @swap 子卷的位置
-### [参数 C](https://man.archlinux.org/man/chattr.1#C)
-chattr +C /swap
-
-# swapfile 可自定义，但要注意后边的要和自定义的一致 
-truncate -s 0 /swap/swapfile
-
-# bs 与 count 的乘积为内存的1-1.5倍，我的内存是32G, 设置 40960 为40G （40 * 1024）
-dd if=/dev/zero of=/swap/swapfile bs=1M count=40960 status=progress
-
-# 权限设置 仅所有者可读写，目前在 su 下，所有者是 root
-chmod 600 /swap/swapfile
-
-# 格式化为 swap 分区
-mkswap -U clear /swap/swapfile
+# 创建交换文件
+btrfs filesystem mkswapfile /swap/swapfile
 
 # 启用 swap
 swapon /swap/swapfile
@@ -623,42 +609,20 @@ vim /etc/fstab
 > 休眠到交换文件  
 > [休眠](https://wiki.archlinux.org/title/Power_management_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)/Suspend_and_hibernate_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#%E4%BC%91%E7%9C%A0)  
 >
-> [raw.githubusercontent.com 连接不上](#固定dns以防被污染)
-> 
 >
 
 ```bash
 # root 用户模式
 su
 
-# wget 命令行下载工具
-# bc 命令行计算器
-pacman -S wget bc
+# 打印 resume_offset
+btrfs inspect-internal map-swapfile -r /swap/swapfile
 
-# 下载
-wget https://raw.githubusercontent.com/osandov/osandov-linux/master/scripts/btrfs_map_physical.c
-
-# 编译
-gcc -O2 -o btrfs_map_physical btrfs_map_physical.c
-
-# 执行
-./btrfs_map_physical /swap/swapfile
-
-# physical offset
-## `./btrfs_map_physical /swap/swapfile` 的结果 PHYSICAL OFFSET 位于第九列，取不算行头对应的第一行的值
-./btrfs_map_physical /swap/swapfile | cut -f 9 | head -2 | tail -1
-
-# PAGESIZE
-getconf PAGESIZE
-
-# physical offset / PAGESIZE，计算得到商（ resume_offset ）
-echo `./btrfs_map_physical /swap/swapfile | cut -f 9 | head -2 | tail -1` / `sudo getconf PAGESIZE` | bc
-
-# 打印resume（ resume ）
+# 打印 resume
 blkid -s UUID -o value /dev/mapper/cryptroot 
 
 # 存到会话变量里
-export myresumeoffset=`echo \`./btrfs_map_physical /swap/swapfile | cut -f 9 | head -2 | tail -1\` / \`getconf PAGESIZE\` | bc`
+export myresumeoffset=`btrfs inspect-internal map-swapfile -r /swap/swapfile`
 export myresume=`blkid -s UUID -o value /dev/mapper/cryptroot`
 
 # 配置引导程序
